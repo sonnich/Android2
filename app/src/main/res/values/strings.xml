@@ -10,4 +10,15 @@
     <string name="onsdag">Onsdag</string>
     <string name="torsdag">Torsdag</string>
     <string name="fredag">Fredag</string>
+    <string name="navn">Navn:</string>
+    <string name="semester">Semester:</string>
+    <string name="oversigt">Oversigt</string>
+    <string name="fag">Fag:</string>
+    <string name="skemalagte">Skemalagte</string>
+    <string name="nom_blokke">Nom. blokke</string>
+    <string name="navn_2">Navn</string>
+    <string name="hjem">Hjem</string>
+    <string name="oversigt2">Oversigt</string>
+    <string name="klasseInfo">Klasse Info</string>
+
 </resources>

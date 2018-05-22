@@ -3,9 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
+
     <item
         android:id="@+id/homeBtn"
-        android:title="Item"
+        android:title="@string/hjem"
         app:showAsAction="always"
-        tools:title="Hjem" />
+         />
 </menu>

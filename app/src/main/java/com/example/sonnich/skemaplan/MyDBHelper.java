@@ -93,8 +93,54 @@ public class MyDBHelper extends SQLiteOpenHelper {
                 + "BLOKNR INTEGER,  "
                 + "FAG INTEGER, "
                 + "KLASSE INTEGER, "
-                + "UNDERVISNINGSFRI INTEGER);"
+                + "UNDERVISNINGSFRI INTEGER DEFAULT 0);"
         );
+
+        createBlok(db, 31, "mandag", 1, 0,0);
+        createBlok(db, 31, "mandag", 2, 0,0);
+        createBlok(db, 31, "tirsdag", 1, 1,0);
+        createBlok(db, 31, "tirsdag", 2, 1,0);
+        createBlok(db, 31, "onsdag", 1, 0,0);
+        createBlok(db, 31, "onsdag", 2, 0,0);
+        createBlok(db, 31, "torsdag", 1, 2,0);
+        createBlok(db, 31, "torsdag", 2, 2,0);
+        createBlok(db, 31, "fredag", 1, 0,0);
+        createBlok(db, 31, "fredag", 2, 0,0);
+
+        createBlok(db, 32, "mandag", 1, 2,0);
+        createBlok(db, 32, "mandag", 2, 2,0);
+        createBlok(db, 32, "tirsdag", 1, 1,0);
+        createBlok(db, 32, "tirsdag", 2, 1,0);
+        createBlok(db, 32, "onsdag", 1, 0,0);
+        createBlok(db, 32, "onsdag", 2, 0,0);
+        createBlok(db, 32, "torsdag", 1, 2,0);
+        createBlok(db, 32, "torsdag", 2, 2,0);
+        createBlok(db, 32, "fredag", 1, 0,0);
+        createBlok(db, 32, "fredag", 2, 0,0);
+
+        createBlok(db, 32, "mandag", 1, 2,1);
+        createBlok(db, 32, "mandag", 2, 2,1);
+        createBlok(db, 32, "tirsdag", 1, 1,1);
+        createBlok(db, 32, "tirsdag", 2, 1,1);
+        createBlok(db, 32, "onsdag", 1, 0,1);
+        createBlok(db, 32, "onsdag", 2, 0,1);
+        createBlok(db, 32, "torsdag", 1, 2,1);
+        createBlok(db, 32, "torsdag", 2, 2,1);
+        createBlok(db, 32, "fredag", 1, 0,1);
+        createBlok(db, 32, "fredag", 2, 0,1);
+
+        createBlok(db, 31, "mandag", 1, 3,2);
+        createBlok(db, 31, "mandag", 2, 3,2);
+        createBlok(db, 31, "tirsdag", 1, 4,2);
+        createBlok(db, 31, "tirsdag", 2, 4,2);
+        createBlok(db, 31, "onsdag", 1, 3,2);
+        createBlok(db, 31, "onsdag", 2, 3,2);
+        createBlok(db, 31, "torsdag", 1, 5,2);
+        createBlok(db, 31, "torsdag", 2, 5,2);
+        createBlok(db, 31, "fredag", 1, 3,2);
+        createBlok(db, 31, "fredag", 2, 3,2);
+
+
 
 
     }

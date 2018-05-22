@@ -32,16 +32,35 @@ public class Storage {
         return storage;
     }
 
-    public Cursor getAllTest(){
-        return db.query("TEST", new String[] {"_id", "NAME", "INFO", "LAT", "LONGT"}, null, null, null, null, "NAME");
-    }
-
     public UnderviserWrapper getAllUnderviser(){
-        return (UnderviserWrapper) db.query(MyDBHelper.UNDERVISER, new String[] {"_id", "NAVN"}, null, null, null, null, "NAVN");
+        Cursor c = db.query(MyDBHelper.UNDERVISER, new String[] {"_id", "NAVN"},
+                            null, null, null, null, "NAVN");
+        return new UnderviserWrapper(c);
     }
 
     public KlasseWrapper getAllKlasser(){
-        return (KlasseWrapper) db.query(MyDBHelper.KLASSE, new String[] {"_id", "NAVN", "SEMESTER"}, null, null, null, null, "NAVN");
+         Cursor c = db.query(MyDBHelper.KLASSE, new String[] {"_id", "NAVN", "SEMESTER"},
+                            null, null, null, null, "NAVN");
+        return new KlasseWrapper(c);
+    }
+
+    public KlasseWrapper getKlasseByID(int i){
+        Cursor c = db.query(MyDBHelper.KLASSE, new String[] {"_id", "NAVN", "SEMESTER"},
+                            "_id=?", new String[] {Integer.toString(i)},
+                            null, null, "NAVN");
+        return new KlasseWrapper(c);
+    }
+
+    public Cursor getFagByKlasse(int i){
+        return db.query(MyDBHelper.FAG, new String[] {"_id", "NAVN", "SEMESTER", "UNDERVISER", "BLOKKE"},
+                            "SEMESTER=?", new String[] {Integer.toString(i)},
+                            null, null, "NAVN");
+    }
+
+    public Cursor getAllBlokkeByFagANDKlasse(int f, int k ){
+        return db.query(MyDBHelper.BLOK, new String[] {"_id", "UGE", "FAG", "UNDERVISER", "BLOKKE"},
+                            "SEMESTER=? AND KL", new String[] {Integer.toString(k)},
+                            null, null, "NAVN");
     }
 
 
