@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:grid="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/choice_grid"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:padding="4dp"
+
+    grid:alignmentMode="alignBounds"
+    grid:columnCount="5"
+    grid:rowOrderPreserved="false"
+    grid:useDefaultMargins="true">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
+    </HorizontalScrollView>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        grid:layout_columnWeight="1"
+        grid:layout_gravity="fill_horizontal"
+        android:gravity="center"
+        android:background="#FF33B5E5"
+        android:text="Tile1" />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        grid:layout_columnWeight="1"
+        grid:layout_gravity="fill_horizontal"
+        android:gravity="center"
+        android:background="#FF33B5E5"
+        android:text="Tile2" />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        grid:layout_columnWeight="1"
+        grid:layout_gravity="fill_horizontal"
+        android:gravity="center"
+        android:background="#FF33B5E5"
+        android:text="Tile3" />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        grid:layout_columnWeight="1"
+        grid:layout_gravity="fill_horizontal"
+        android:gravity="center"
+        android:background="#FF33B5E5"
+        android:text="Tile4" />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        grid:layout_columnWeight="1"
+        grid:layout_gravity="fill_horizontal"
+        android:gravity="center"
+        android:background="#FF33B5E5"
+        android:text="Tile4" />
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        grid:layout_columnWeight="1"
+        grid:layout_gravity="fill_horizontal"
+        android:gravity="center"
+        android:background="#FF33B5E5"
+        android:text="Tile4" />
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        grid:layout_columnWeight="1"
+        grid:layout_gravity="fill_horizontal"
+        android:gravity="center"
+        android:background="#FF33B5E5"
+        android:text="Tile4" />
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        grid:layout_columnWeight="1"
+        grid:layout_gravity="fill_horizontal"
+        android:gravity="center"
+        android:background="#FF33B5E5"
+        android:text="Tile4" />
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        grid:layout_columnWeight="1"
+        grid:layout_gravity="fill_horizontal"
+        android:gravity="center"
+        android:background="#FF33B5E5"
+        android:text="Tile4" />
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        grid:layout_columnWeight="1"
+        grid:layout_gravity="fill_horizontal"
+        android:gravity="center"
+        android:background="#FF33B5E5"
+        android:text="Tile4" />
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        grid:layout_columnWeight="1"
+        grid:layout_gravity="fill_horizontal"
+        android:gravity="center"
+        android:background="#FF33B5E5"
+        android:text="Tile4" />
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        grid:layout_columnWeight="1"
+        grid:layout_gravity="fill_horizontal"
+        android:gravity="center"
+        android:background="#FF33B5E5"
+        android:text="Tile4" />
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        grid:layout_columnWeight="1"
+        grid:layout_gravity="fill_horizontal"
+        android:gravity="center"
+        android:background="#FF33B5E5"
+        android:text="Tile4" />
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        grid:layout_columnWeight="1"
+        grid:layout_gravity="fill_horizontal"
+        android:gravity="center"
+        android:background="#FF33B5E5"
+        android:text="Tile4" />
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        grid:layout_columnWeight="1"
+        grid:layout_gravity="fill_horizontal"
+        android:gravity="center"
+        android:background="#FF33B5E5"
+        android:text="Tile4" />
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        grid:layout_columnWeight="1"
+        grid:layout_gravity="fill_horizontal"
+        android:gravity="center"
+        android:background="#FF33B5E5"
+        android:text="Tile4" />
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        grid:layout_columnWeight="1"
+        grid:layout_gravity="fill_horizontal"
+        android:gravity="center"
+        android:background="#FF33B5E5"
+        android:text="Tile4" />
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        grid:layout_columnWeight="1"
+        grid:layout_gravity="fill_horizontal"
+        android:gravity="center"
+        android:background="#FF33B5E5"
+        android:text="Tile4" />
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        grid:layout_columnWeight="1"
+        grid:layout_gravity="fill_horizontal"
+        android:gravity="center"
+        android:background="#FF33B5E5"
+        android:text="Tile4" />
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        grid:layout_columnWeight="1"
+        grid:layout_gravity="fill_horizontal"
+        android:gravity="center"
+        android:background="#FF33B5E5"
+        android:text="Tile4" />
+
+</android.support.v7.widget.GridLayout>
