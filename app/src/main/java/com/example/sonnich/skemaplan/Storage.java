@@ -52,15 +52,15 @@ public class Storage {
     }
 
     public Cursor getFagByKlasse(int i){
-        return db.query(MyDBHelper.FAG, new String[] {"_id", "NAVN", "SEMESTER", "UNDERVISER", "BLOKKE"},
+        return db.query(MyDBHelper.FAG, new String[] {"_id", "NAVN", "SEMESTER", "UNDERVISER", "NOMBLOKKE"},
                             "SEMESTER=?", new String[] {Integer.toString(i)},
                             null, null, "NAVN");
     }
 
-    public Cursor getAllBlokkeByFagANDKlasse(int f, int k ){
-        return db.query(MyDBHelper.BLOK, new String[] {"_id", "UGE", "FAG", "UNDERVISER", "BLOKKE"},
-                            "SEMESTER=? AND KL", new String[] {Integer.toString(k)},
-                            null, null, "NAVN");
+    public Cursor getAllBlokkeBySEMAndKlasse(int s, int k ){
+        return db.query(MyDBHelper.BLOK, new String[] {"_id", "UGE", "BLOKNR", "FAG", "KLASSE", "UNDERVISNINGSFRI"},
+                            "SEMESTER=? AND KLASSE=?", new String[] {Integer.toString(s), Integer.toString(k)},
+                            null, null, "FAG");
     }
 
 

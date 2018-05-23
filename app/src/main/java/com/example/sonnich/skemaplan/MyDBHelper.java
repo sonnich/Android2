@@ -50,7 +50,7 @@ public class MyDBHelper extends SQLiteOpenHelper {
                 + "NAVN TEXT, "
                 + "SEMESTER INTEGER, "
                 + "UNDERVISER INTEGER, "
-                + "BLOKKE INTEGER);"
+                + "NOMBLOKKE INTEGER);"
         );
 
         //opretter testdata til fag
@@ -93,7 +93,8 @@ public class MyDBHelper extends SQLiteOpenHelper {
                 + "BLOKNR INTEGER,  "
                 + "FAG INTEGER, "
                 + "KLASSE INTEGER, "
-                + "UNDERVISNINGSFRI INTEGER DEFAULT 0);"
+                + "UNDERVISNINGSFRI INTEGER DEFAULT 0,"
+                + "CONSTRAINT dobbelt UNIQUE(BLOKNR, UGE, FAG));"
         );
 
         createBlok(db, 31, "mandag", 1, 0,0);
@@ -118,16 +119,16 @@ public class MyDBHelper extends SQLiteOpenHelper {
         createBlok(db, 32, "fredag", 1, 0,0);
         createBlok(db, 32, "fredag", 2, 0,0);
 
-        createBlok(db, 32, "mandag", 1, 2,1);
-        createBlok(db, 32, "mandag", 2, 2,1);
-        createBlok(db, 32, "tirsdag", 1, 1,1);
-        createBlok(db, 32, "tirsdag", 2, 1,1);
-        createBlok(db, 32, "onsdag", 1, 0,1);
-        createBlok(db, 32, "onsdag", 2, 0,1);
-        createBlok(db, 32, "torsdag", 1, 2,1);
-        createBlok(db, 32, "torsdag", 2, 2,1);
-        createBlok(db, 32, "fredag", 1, 0,1);
-        createBlok(db, 32, "fredag", 2, 0,1);
+        createBlok(db, 32, "mandag", 1, 1,1);
+        createBlok(db, 32, "mandag", 2, 1,1);
+        createBlok(db, 32, "tirsdag", 1, 2,1);
+        createBlok(db, 32, "tirsdag", 2, 2,1);
+        createBlok(db, 32, "onsdag", 1, 3,1);
+        createBlok(db, 32, "onsdag", 2, 3,1);
+        createBlok(db, 32, "torsdag", 1, 1,1);
+        createBlok(db, 32, "torsdag", 2, 1,1);
+        createBlok(db, 32, "fredag", 1, 3,1);
+        createBlok(db, 32, "fredag", 2, 3,1);
 
         createBlok(db, 31, "mandag", 1, 3,2);
         createBlok(db, 31, "mandag", 2, 3,2);

@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fitsSystemWindows="true"
     android:layout_width="match_parent"
+    android:id="@+id/klasseCoord"
     android:layout_height="match_parent">
 
     <android.support.design.widget.AppBarLayout
@@ -169,6 +170,7 @@
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/klasseInfoFAB"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:clickable="true"
