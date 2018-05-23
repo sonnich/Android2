@@ -25,8 +25,8 @@
                 android:id="@+id/app_bar_image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/classphoto"
-                android:scaleType="centerCrop" />
+                android:scaleType="centerCrop"
+                android:src="@drawable/classphoto" />
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -105,9 +105,11 @@
             <LinearLayout
                 android:layout_width="280dp"
                 android:layout_height="59dp"
+                android:layout_marginBottom="16dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView7">
 
@@ -127,7 +129,7 @@
                         android:text="@string/navn_2"
                         android:textAlignment="center"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                        />
+                        android:textSize="12sp" />
 
                     <TextView
 
@@ -137,7 +139,8 @@
                         android:layout_weight="1"
                         android:text="@string/nom_blokke"
                         android:textAlignment="center"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textSize="12sp" />
 
                     <TextView
 
@@ -147,12 +150,14 @@
                         android:layout_weight="1"
                         android:text="@string/skemalagte"
                         android:textAlignment="center"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textSize="12sp" />
 
                 </LinearLayout>
 
                 <ListView
                     android:layout_width="match_parent"
+                    android:id="@+id/fagLW"
                     android:layout_height="0dp"
                     android:layout_marginBottom="8dp"
                     android:layout_marginTop="8dp"

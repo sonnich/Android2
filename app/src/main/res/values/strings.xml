@@ -20,5 +20,15 @@
     <string name="hjem">Hjem</string>
     <string name="oversigt2">Oversigt</string>
     <string name="klasseInfo">Klasse Info</string>
+    <string name="underviser">Underviser</string>
+    <string name="tilføjklasse">Tilføj Klasse</string>
+
+    <string-array name="semestre">
+        <item>1. semester</item>
+        <item>2. semester</item>
+        <item>3. semester</item>
+        <item>4. semester</item>
+
+    </string-array>
 
 </resources>

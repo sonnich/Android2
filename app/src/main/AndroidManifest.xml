@@ -16,7 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".KlasseInfo"></activity>
+        <activity android:name=".KlasseInfo" />
+        <activity android:name=".UnderviserInfo" />
+        <activity android:name=".AddKlasseActivity"></activity>
     </application>
 
 </manifest>

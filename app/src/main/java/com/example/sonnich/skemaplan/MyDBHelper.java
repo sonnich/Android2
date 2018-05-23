@@ -66,7 +66,7 @@ public class MyDBHelper extends SQLiteOpenHelper {
         createTestFAG(db, "DIS", 3, 1,50);
         createTestFAG(db, "Android", 4, 2,50);
         createTestFAG(db, "C#&.Net", 4, 3,50);
-        createTestFAG(db, "Spiludvikling", 4, 4,50);
+        createTestFAG(db, "Spilud.", 4, 4,50);
 
 
         //Opretter tabel til klasse
@@ -99,47 +99,41 @@ public class MyDBHelper extends SQLiteOpenHelper {
 
         createBlok(db, 31, "mandag", 1, 0,0);
         createBlok(db, 31, "mandag", 2, 0,0);
-        createBlok(db, 31, "tirsdag", 1, 1,0);
-        createBlok(db, 31, "tirsdag", 2, 1,0);
-        createBlok(db, 31, "onsdag", 1, 0,0);
-        createBlok(db, 31, "onsdag", 2, 0,0);
-        createBlok(db, 31, "torsdag", 1, 2,0);
-        createBlok(db, 31, "torsdag", 2, 2,0);
-        createBlok(db, 31, "fredag", 1, 0,0);
-        createBlok(db, 31, "fredag", 2, 0,0);
+        createBlok(db, 31, "tirsdag", 5, 1,0);
+        createBlok(db, 31, "tirsdag", 6, 1,0);
+        createBlok(db, 31, "onsdag", 9, 0,0);
+        createBlok(db, 31, "onsdag", 10, 0,0);
+        createBlok(db, 31, "torsdag", 13, 2,0);
+        createBlok(db, 31, "torsdag", 14, 2,0);
+        createBlok(db, 31, "fredag", 17, 0,0);
+        createBlok(db, 31, "fredag", 18, 0,0);
 
         createBlok(db, 32, "mandag", 1, 2,0);
         createBlok(db, 32, "mandag", 2, 2,0);
-        createBlok(db, 32, "tirsdag", 1, 1,0);
-        createBlok(db, 32, "tirsdag", 2, 1,0);
-        createBlok(db, 32, "onsdag", 1, 0,0);
-        createBlok(db, 32, "onsdag", 2, 0,0);
-        createBlok(db, 32, "torsdag", 1, 2,0);
-        createBlok(db, 32, "torsdag", 2, 2,0);
-        createBlok(db, 32, "fredag", 1, 0,0);
-        createBlok(db, 32, "fredag", 2, 0,0);
+        createBlok(db, 32, "tirsdag", 5, 1,0);
+        createBlok(db, 32, "tirsdag", 6, 1,0);
+        createBlok(db, 32, "onsdag", 9, 0,0);
+        createBlok(db, 32, "onsdag", 10, 0,0);
+        createBlok(db, 32, "torsdag", 13, 2,0);
+        createBlok(db, 32, "torsdag", 14, 2,0);
+        createBlok(db, 32, "fredag", 17, 0,0);
+        createBlok(db, 32, "fredag", 18, 0,0);
 
         createBlok(db, 32, "mandag", 1, 1,1);
         createBlok(db, 32, "mandag", 2, 1,1);
-        createBlok(db, 32, "tirsdag", 1, 2,1);
-        createBlok(db, 32, "tirsdag", 2, 2,1);
-        createBlok(db, 32, "onsdag", 1, 3,1);
-        createBlok(db, 32, "onsdag", 2, 3,1);
-        createBlok(db, 32, "torsdag", 1, 1,1);
-        createBlok(db, 32, "torsdag", 2, 1,1);
-        createBlok(db, 32, "fredag", 1, 3,1);
-        createBlok(db, 32, "fredag", 2, 3,1);
+        createBlok(db, 32, "tirsdag", 4, 2,1);
+        createBlok(db, 32, "tirsdag", 5, 2,1);
+        createBlok(db, 32, "onsdag", 9, 3,1);
+        createBlok(db, 32, "onsdag", 10, 3,1);
+        createBlok(db, 32, "torsdag", 13, 1,1);
+        createBlok(db, 32, "torsdag", 14, 1,1);
+        createBlok(db, 32, "fredag", 17, 3,1);
+        createBlok(db, 32, "fredag", 18, 3,1);
 
-        createBlok(db, 31, "mandag", 1, 3,2);
-        createBlok(db, 31, "mandag", 2, 3,2);
-        createBlok(db, 31, "tirsdag", 1, 4,2);
-        createBlok(db, 31, "tirsdag", 2, 4,2);
-        createBlok(db, 31, "onsdag", 1, 3,2);
-        createBlok(db, 31, "onsdag", 2, 3,2);
-        createBlok(db, 31, "torsdag", 1, 5,2);
-        createBlok(db, 31, "torsdag", 2, 5,2);
-        createBlok(db, 31, "fredag", 1, 3,2);
-        createBlok(db, 31, "fredag", 2, 3,2);
+
+
+
+
 
 
 
@@ -170,7 +164,7 @@ public class MyDBHelper extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
         cv.put("NAVN", navn);
         cv.put("SEMESTER", semester);
-        cv.put("BLOKKE", blokke);
+        cv.put("NOMBLOKKE", blokke);
         cv.put("UNDERVISER", underviser);
 
         db.insert(FAG, null, cv);

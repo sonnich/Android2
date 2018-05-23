@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.util.Log;
@@ -62,6 +63,16 @@ public class KlasseListe extends Fragment {
         Log.d("Cursor", cursor.getColumnCount()+"");
 
         klasseView = v.findViewById(R.id.klasseLW);
+
+        FloatingActionButton addKlasse = v.findViewById(R.id.klasseListeFAB);
+        addKlasse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), AddKlasseActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(act,
                 android.R.layout.simple_list_item_1, cursor,

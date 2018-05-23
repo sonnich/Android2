@@ -1,6 +1,7 @@
 package com.example.sonnich.skemaplan;
 
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -55,10 +56,10 @@ public class UnderviserListe extends Fragment {
 
                 Log.v("Adapter", "clicked + id");
 
-                //Intent intent = new Intent(getActivity(), Note.class);
-                //intent.putExtra(Note.REJSE_ID, (int) id);
+                Intent intent = new Intent(getActivity(), UnderviserInfo.class);
+                intent.putExtra(UnderviserInfo.UNDERVISERID, (int) id);
 
-                //startActivity(intent);
+                startActivity(intent);
 
             }
         });

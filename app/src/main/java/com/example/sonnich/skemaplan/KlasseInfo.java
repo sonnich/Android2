@@ -9,13 +9,18 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.sonnich.skemaplan.Model.Klasse;
 import com.example.sonnich.skemaplan.Model.KlasseWrapper;
 
 public class KlasseInfo extends AppCompatActivity {
+    private static final String TAG = "KlasseInfo";
 
     public static final String KLASSEID ="klasseid";
     private int klasseID;
@@ -26,6 +31,8 @@ public class KlasseInfo extends AppCompatActivity {
     private Integer[] idholder = new Integer[1];
     private TextView tvNavn;
     private TextView tvSemester;
+    private ListView lwFag;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +47,38 @@ public class KlasseInfo extends AppCompatActivity {
         storage= Storage.getStorage(this);
 
         klasseID = getIntent().getIntExtra(KLASSEID,0);
+        Log.d(TAG, "onCreate: "+klasseID);
 
-        initData();
+
+
+        //initData();
+
+        lwFag = findViewById(R.id.fagLW);
+        klasseWrapper = storage.getKlasseByID(klasseID);
+        if(klasseWrapper.moveToFirst()){
+            Klasse k = klasseWrapper.getKlasse();
+
+            tvNavn = findViewById(R.id.navnTxt);
+            tvSemester = findViewById(R.id.semesterTxt);
+            tvNavn.setText(k.getNavn());
+            tvSemester.setText(""+ k.getSemester()+".");
+            Cursor c = storage.getFagBySemester(k.getSemester());
+
+            FagAdap2 fagAd = new FagAdap2(this, c, 0);
+            lwFag.setAdapter(fagAd);
+            Log.d(TAG, "onCreate:  afteradapterset");
+
+
+        }else{
+            Log.d(TAG, "onCreate: "+"Klassewrapper: " +klasseWrapper.getColumnCount());
+        }
+
+
+
+
+
+
+
 
         FloatingActionButton klasseFAB = findViewById(R.id.klasseInfoFAB);
         klasseFAB.setOnClickListener(new View.OnClickListener() {
@@ -54,9 +91,29 @@ public class KlasseInfo extends AppCompatActivity {
 
 
 
-
-
     }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the app bar.
+        getMenuInflater().inflate(R.menu.menu_home, menu);
+
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.homeBtn:
+                finish();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 
 
     //starter Async læsning af klasse fra DB;
@@ -81,6 +138,7 @@ public class KlasseInfo extends AppCompatActivity {
             super.onPreExecute();
             tvNavn = findViewById(R.id.navnTxt);
             tvSemester = findViewById(R.id.semesterTxt);
+
         }
 
         @Override
@@ -116,12 +174,17 @@ public class KlasseInfo extends AppCompatActivity {
             tvNavn.setText(k.getNavn());
             tvSemester.setText(""+ k.getSemester()+".");
 
-            //tvNavn.setText(klasseWrapper.getString(1));
-            //tvSemester.setText(""+ klasseWrapper.getInt(2)+".");
+
+
+
+
+
         }else{
             Snackbar sb = Snackbar.make(coord, "Fejl", Snackbar.LENGTH_SHORT);
             sb.show();
         }
+
+
     }
 
 

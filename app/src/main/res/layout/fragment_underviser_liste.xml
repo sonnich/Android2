@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:clickable="true"
-        android:layout_margin="8dp"
+        android:layout_margin="20dp"
         app:elevation="4dp"
         android:src="@android:drawable/ic_input_add" />
 </FrameLayout>
