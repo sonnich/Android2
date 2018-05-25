@@ -16,7 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
 public class MainActivity extends AppCompatActivity {
-
+    private static final String TAG = "MainActivity";
     private Cursor klassecursor;
     private Cursor undervisercursor;
     private Storage storage;
@@ -34,13 +34,14 @@ public class MainActivity extends AppCompatActivity {
         pager.setAdapter(pagerAdapter);
         storage=Storage.getStorage(this);
 
-        ReadDBforList reader = new ReadDBforList();
-        reader.execute();
+        updateData();
+/*        ReadDBforList reader = new ReadDBforList();
+        reader.execute();*/
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.oversigt2);
         setSupportActionBar(toolbar);
-        ;
+
 
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
@@ -53,6 +54,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         return super.onCreateOptionsMenu(menu);
+    }
+
+    public void updateData(){
+        ReadDBforList reader = new ReadDBforList();
+        reader.execute();
     }
 
     public Cursor getKCursor(){

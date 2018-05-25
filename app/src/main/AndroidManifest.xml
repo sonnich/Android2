@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".KlasseInfo" />
         <activity android:name=".UnderviserInfo" />
-        <activity android:name=".AddKlasseActivity"></activity>
+        <activity android:name=".AddKlasseActivity" />
+        <activity android:name=".SkemaActivity"></activity>
     </application>
 
 </manifest>

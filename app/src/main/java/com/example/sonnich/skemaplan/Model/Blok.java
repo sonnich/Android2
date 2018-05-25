@@ -1,6 +1,8 @@
 package com.example.sonnich.skemaplan.Model;
 
-public class Blok {
+import java.io.Serializable;
+
+public class Blok implements Serializable {
 
 
 
@@ -10,7 +12,40 @@ public class Blok {
     private int blokNr;
     private int fag;
     private int klasse;
+    private String fagnavn;
+    private String klasseNavn;
+    private String undervisernavn;
+
+    public String getKlasseNavn() {
+        return klasseNavn;
+    }
+
+    public void setKlasseNavn(String klasseNavn) {
+        this.klasseNavn = klasseNavn;
+    }
+
+    public String getUndervisernavn() {
+        return undervisernavn;
+    }
+
+    public void setUndervisernavn(String undervisernavn) {
+        this.undervisernavn = undervisernavn;
+    }
+
     private boolean undervisningsfri;
+
+
+    public String getFagnavn() {
+        return fagnavn;
+    }
+
+    public void setFagnavn(String fagnavn) {
+        this.fagnavn = fagnavn;
+    }
+
+    public Blok(int blokNr){
+        this.blokNr=blokNr;
+    }
 
     public Blok(int dbID, int uge, String dag, int blokNr, int fag, int klasse, boolean undervisningsfri) {
         this.dbID = dbID;

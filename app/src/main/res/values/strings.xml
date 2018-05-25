@@ -22,6 +22,11 @@
     <string name="klasseInfo">Klasse Info</string>
     <string name="underviser">Underviser</string>
     <string name="tilføjklasse">Tilføj Klasse</string>
+    <string name="tilføjFag">Tilføj fag</string>
+    <string name="fortryd">Fortryd</string>
+    <string name="tilføj">Tilføj</string>
+    <string name="vaelg_handling">Vælg handling</string>
+
 
     <string-array name="semestre">
         <item>1. semester</item>
@@ -29,6 +34,29 @@
         <item>3. semester</item>
         <item>4. semester</item>
 
+    </string-array>
+
+    <string-array name="fagNavne">
+        <item>PRO1</item>
+        <item>SU1</item>
+        <item>FIT1</item>
+        <item>PRO2</item>
+        <item>SU2</item>
+        <item>FIT2</item>
+        <item>DAOS</item>
+        <item>SUM</item>
+        <item>DIP</item>
+        <item>DIS</item>
+        <item>Android</item>
+        <item>C#og.Net</item>
+        <item>Spilud.</item>
+
+    </string-array>
+
+    <string-array name="blokOptions">
+        <item>Slet Blok</item>
+        <item>Markér Fri</item>
+        <item>Tilføj Blok</item>
     </string-array>
 
 </resources>

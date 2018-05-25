@@ -176,9 +176,6 @@ public class KlasseInfo extends AppCompatActivity {
 
 
 
-
-
-
         }else{
             Snackbar sb = Snackbar.make(coord, "Fejl", Snackbar.LENGTH_SHORT);
             sb.show();

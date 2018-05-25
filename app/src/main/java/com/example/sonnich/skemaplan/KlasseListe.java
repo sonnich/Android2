@@ -20,6 +20,7 @@ import android.widget.ListView;
  * A simple {@link Fragment} subclass.
  */
 public class KlasseListe extends Fragment {
+    private static final String TAG = "KlasseListe";
 
     private Cursor cursor;
     private ListView klasseView;
@@ -58,6 +59,7 @@ public class KlasseListe extends Fragment {
 
     public void initList(View v){
         MainActivity act = (MainActivity) getActivity();
+        act.updateData();
         cursor = act.getKCursor();
 
         Log.d("Cursor", cursor.getColumnCount()+"");
@@ -89,10 +91,24 @@ public class KlasseListe extends Fragment {
                 Log.v("Adapter", "clicked + id");
 
                 Intent intent = new Intent(getActivity(), KlasseInfo.class);
+
                 intent.putExtra(KlasseInfo.KLASSEID, (int) id);
 
                 startActivity(intent);
 
+            }
+        });
+
+        klasseView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getActivity(), SkemaActivity.class);
+                intent.putExtra(SkemaActivity.KLASSEID, (int) l);
+                Log.d(TAG, "onItemLongClick: i= " +i+ "l= "+l);
+
+                startActivity(intent);
+
+                return true;
             }
         });
 
@@ -104,5 +120,11 @@ public class KlasseListe extends Fragment {
     public void onDestroy() {
         super.onDestroy();
         cursor.close();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        initList(getView());
     }
 }

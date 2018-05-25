@@ -1,5 +1,6 @@
 package com.example.sonnich.skemaplan;
 
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.os.AsyncTask;
@@ -8,9 +9,15 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.widget.SimpleCursorAdapter;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class UnderviserInfo extends AppCompatActivity {
@@ -18,12 +25,14 @@ public class UnderviserInfo extends AppCompatActivity {
     private static final String TAG = "UnderviserInfo";
     private TextView navnTxt;
     private ListView fagLw;
-    private FloatingActionButton nytFag;
+
     private CoordinatorLayout coord;
     private Storage storage;
     private int underviserID;
+    private int fagToAdd;
     private Cursor underviserCursor;
     private Cursor fagCursor;
+    private Spinner fagSpinner;
 
 
 
@@ -42,10 +51,68 @@ public class UnderviserInfo extends AppCompatActivity {
 
         coord = findViewById(R.id.underviserinfoCOord);
 
+
+
         underviserID = getIntent().getIntExtra(UNDERVISERID, 0);
         initData();
 
+        FloatingActionButton addKlasse = findViewById(R.id.underviserInfoFab);
+        addKlasse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(UnderviserInfo.this);
+                View fagView = getLayoutInflater().inflate(R.layout.fag_dialogue, null);
+                builder.setTitle(R.string.tilføjFag);
+                fagSpinner = (Spinner) fagView.findViewById(R.id.fagSpinner);
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(UnderviserInfo.this, android.R.layout.simple_spinner_item,
+                        getResources().getStringArray(R.array.fagNavne));
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                fagSpinner.setAdapter(adapter);
+                fagSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        fagToAdd = position+1;
+                        Log.d(TAG, "onItemSelected: "+ position);
 
+                    }
+                    public void onNothingSelected(AdapterView<?> parent) {
+                        fagToAdd=1;
+
+                    }
+                });
+
+                builder.setPositiveButton(R.string.tilføj, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        AddFagToUnderViser writer = new AddFagToUnderViser();
+                        writer.execute();
+                        initData();
+                        dialogInterface.dismiss();
+
+                    }
+                });
+
+                builder.setNegativeButton(getString(R.string.fortryd), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+
+                    }
+                });
+
+                builder.setView(fagView);
+                builder.show();
+
+
+            }
+        });
+
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        initData();
     }
 
     @Override
@@ -99,13 +166,34 @@ public class UnderviserInfo extends AppCompatActivity {
 
             fagLw.setAdapter(adapter);
 
-            //underviserCursor.close();
-            //fagCursor.close();
-
-
-
         }
 
 
+
+
+    }
+    private class AddFagToUnderViser extends AsyncTask<Void, Void, Boolean>{
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... voids) {
+            boolean succes =true;
+            try{
+                storage.addFagToUnderViser(underviserID, fagToAdd);
+            }catch (SQLException e){
+                Snackbar sb = Snackbar.make(coord, "DB Unavailable", Snackbar.LENGTH_SHORT);
+                sb.show();
+                Log.d(TAG, "doInBackground: "+ e);
+
+                succes = false;
+            }
+
+            return succes;
+        }
     }
 }
